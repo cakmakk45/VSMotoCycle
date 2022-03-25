@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "_Layout";
+}
+
+<form method="post" asp-controller="User" asp-action="AddUser">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="firstName" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastName" placeholder="">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Birth Date</label>
+        <input type="date" class="form-control" name="birthDate" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Blood Group</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="BloodGroup" placeholder="">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Residential Area</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="ResidentialArea" placeholder="">
+    </div>
+    <div class="mb-3">
+        <select class="form-select form-control" name="OperationClaimId" aria-label="Default select example">
+            <option value="2" selected>Üye</option>
+            <option value="1">Yönetici</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>

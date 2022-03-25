@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+@model UserModel
+
+@{
+    if (Model.UserDto!=null)
+    {
+        Layout = "_Layout";
+    }
+    else
+    {
+        Layout = "_EmptyLayout";
+    }
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>contact me here! <a href="mailto:cakmakkadriye45@gmail.com"> cakmakkadriye45@gmail.com </a>.</p>
+
+    <div align="center"><img src="https://media.giphy.com/media/RbDKaczqWovIugyJmW/giphy.gif" alt="giph" /></div>
+
+</div>

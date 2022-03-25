@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model UserModel;
+
+@{
+    Layout = "_Layout";
+}
+@{ if (Model.UserDto != null)
+    {
+        <form method="post" asp-controller="User" asp-action="UpdateUser">
+            <div class="mb-3">
+                <input type="hidden" class="form-control" id="exampleFormControlInput1" name="userId" value="@Model.UserDto.Id" placeholder="">
+                <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="firstName" value="@Model.UserDto.FirstName" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastName" value="@Model.UserDto.LastName" placeholder="">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="@Model.UserDto.Email" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Birth Date</label>
+                <input type="date" class="form-control" value="@Model.UserDto.BirthDate" name="birthDate" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Blood Group</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="BloodGroup" value="@Model.UserDto.BloodGroup" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Residential Area</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="ResidentialArea" value="@Model.UserDto.Address" placeholder="">
+            </div>
+            <div class="mb-3">
+                <select class="form-select form-control" name="OperationClaimId" value="@Model.UserDto.OperationClaimId" aria-label="Default select example">
+                    <option value="2">Üye</option>
+                    <option value="1">Yönetici</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Güncelle</button>
+        </form>
+    }
+}

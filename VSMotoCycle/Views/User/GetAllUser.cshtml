@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+@model UserModel
+<!-- Custom styles for this page -->
+<link href="~/theme/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Kullanıcı Listesi</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Adı Soyadı</th>
+                        <th>Email</th>
+                        <th>Üyelik</th>
+                        <th>Doğum Tarihi</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @{
+                        foreach (var item in Model.UserList)
+                        {
+                            <tr>
+                                <td>@item.FirstName @item.LastName </td>
+
+                                <td>@item.Email</td>
+
+                                <td>@item.OperationClaimName</td>
+
+                                <td>@item.BirthDate</td>
+                                <td>
+                                    <form method="post" asp-action="DeleteUser" asp-controller="User">
+                                        <input name="userId" type="hidden" value="@item.Id" />
+                                        <button type="submit" class="btn btn-danger">Sil</button>
+                                    </form>
+                                </td>
+                                <td>
+
+                                    <a href="./UpdateUser?userId=@item.Id" class="btn btn-primary">Düzenle</a>
+
+                                </td>
+                            </tr>
+
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
